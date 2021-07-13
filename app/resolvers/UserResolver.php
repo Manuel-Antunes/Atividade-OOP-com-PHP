@@ -46,7 +46,6 @@ class UserResolver
                 $_SESSION["loggedUser"] = array("id" => $result->getId(), "username" => $result->getUsername(), "email" => $result->getEmail());
                 require_once "app/views/home/index.php";
             } else {
-                echo "usuário não encontrado";
                 require_once "app/views/login/index.php";
             }
         }

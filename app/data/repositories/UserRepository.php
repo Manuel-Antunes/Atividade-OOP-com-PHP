@@ -19,11 +19,10 @@ class UserRepository extends Repository
         $stmt->bindParam(":fullname", $fullname);
         $stmt->execute();
     }
-    public function auth(String $email, String $password)
+    public function findByEmal(String $email)
     {
-        $stmt = $this->conn->prepare('SELECT * FROM users WHERE email = :email AND password = :password');
+        $stmt = $this->conn->prepare('SELECT * FROM users WHERE email = :email');
         $stmt->bindParam(":email", $email);
-        $stmt->bindParam(":password", $password);
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return sizeof($result) > 0 ? $result[0] : NULL;

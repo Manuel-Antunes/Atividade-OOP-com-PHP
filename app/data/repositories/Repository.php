@@ -1,8 +1,5 @@
 <?php
 
-namespace repositories;
-
-use PDO;
 
 class Repository
 {

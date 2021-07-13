@@ -5,7 +5,7 @@ class Connection
     {
         $database = "atividade";
         $username = "root";
-        $senha = "root";
+        $senha = "";
         return new PDO("mysql:host=localhost;dbname=$database", $username, $senha);
     }
 }

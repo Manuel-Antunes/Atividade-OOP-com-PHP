@@ -31,7 +31,7 @@ class UserService
         String $email
     ) {
         try {
-            $this->userRepository->store($username, $password, $fullname, $email);
+            $this->userRepository->store($username, password_hash($password, PASSWORD_DEFAULT), $fullname, $email);
         } catch (Exception $e) {
             echo '<div class="error-message">' . $e->getMessage() . '</div>';
         }
@@ -43,7 +43,7 @@ class UserService
             if (is_null($fetch)) {
                 return false;
             }
-            $user = new User($fetch['id'], $fetch['email'], $fetch['username'], $fetch['fullname'], $fetch['password']);
+            $user = new User($fetch['id'], $fetch['email'], $fetch['username'], $fetch['fullname']);
             return $user;
         } catch (Exception $e) {
             echo `<div class="error-message">` . $e->getMessage() . `</div>`;

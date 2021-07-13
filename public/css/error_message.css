@@ -1,0 +1,13 @@
+.error-message {
+    color: #fff;
+    background-color: #ba000d;
+    position: absolute;
+    font-size: 2rem;
+    font-family: "Roboto", sans-serif;
+    top: 10px;
+    border-radius: 5px;
+    left: 10px;
+    width: 90%;
+    padding: 1rem;
+    max-width: 1024px;
+}

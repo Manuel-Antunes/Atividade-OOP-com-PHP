@@ -21,7 +21,7 @@ class UserService
             }, $list);
             return $users;
         } catch (Exception $e) {
-            echo $e->getMessage();
+            echo `<div class="error-message">` . $e->getMessage() . `</div>`;
         }
     }
     public function createUser(
@@ -33,7 +33,7 @@ class UserService
         try {
             $this->userRepository->store($username, $password, $fullname, $email);
         } catch (Exception $e) {
-            echo $e->getMessage();
+            echo '<div class="error-message">' . $e->getMessage() . '</div>';
         }
     }
     public function logIn(String $email, String $password)
@@ -46,7 +46,7 @@ class UserService
             $user = new User($fetch['id'], $fetch['email'], $fetch['username'], $fetch['fullname'], $fetch['password']);
             return $user;
         } catch (Exception $e) {
-            echo $e->getMessage();
+            echo `<div class="error-message">` . $e->getMessage() . `</div>`;
         }
     }
 }

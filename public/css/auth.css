@@ -1,0 +1,49 @@
+.form-control {
+    display: flex;
+    font-size: 3rem;
+    margin-top: 2rem;
+    font-weight: bold;
+    flex-direction: column;
+}
+
+.vocative {
+    display: flex;
+    padding: 1rem;
+    justify-content: space-between;
+    font-size: 3rem;
+}
+
+form {
+    width: 90%;
+    max-width: 900px;
+}
+
+input {
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    font-weight: thin;
+    border: none;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+button {
+    margin-top: 2rem;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    background-color: #3f51b5;
+    font-weight: bold;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.container {
+    padding: 5rem 0;
+    font-size: 4rem;
+    align-items: center;
+    display: flex;
+    font-family: "Roboto", sans-serif;
+    flex-direction: column;
+}

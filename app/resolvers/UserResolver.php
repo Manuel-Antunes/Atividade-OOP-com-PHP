@@ -27,7 +27,7 @@ class UserResolver
         } else {
             $result = $this->userService->createUser($username, $password, $fullname, $email);
             if (!is_bool($result)) {
-                require_once "app/views/signup/index.php";
+                require_once "app/views/login/index.php";
             } else {
                 require_once "app/views/signup/index.php";
             }

@@ -1,7 +1,7 @@
 <?php
 
 
-class Repository
+abstract class Repository
 {
     public PDO $conn;
 

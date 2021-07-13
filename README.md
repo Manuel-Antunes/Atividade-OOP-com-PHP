@@ -1,2 +1,6 @@
 # Atividade-OOP-com-PHP
-Segunda atividade de PWEB2
+
+* S.O.L.I.D principles
+* gitpod
+
+### Aluno: Manuel Eduardo Nascimento Antunes

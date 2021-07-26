@@ -38,7 +38,7 @@ function logOut()
             <h1>Bem Vindo <?= $user['username'] ?></h1>
             <form action="?view=home" method="GET">
                 <label for="search">Encontrar Usuários</label>
-                <input type="text" name="search">
+                <input type="text" name="search" value="<?php echo isset($_GET["search"]) ? $_GET["search"] : '' ?>">
                 <button type="submit">Pesquisar</button>
             </form>
             <table>

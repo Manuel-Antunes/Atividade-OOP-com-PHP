@@ -27,4 +27,13 @@ class UserRepository extends Repository
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return sizeof($result) > 0 ? $result[0] : NULL;
     }
+    public function search(String $queryString)
+    {
+        $stmt = $this->conn->prepare('SELECT * FROM users WHERE email LIKE :query_string or username LIKE :query_string or fullname LIKE :query_string');
+        $queryString = '%' . $queryString . '%';
+        $stmt->bindParam(":query_string", $queryString);
+        $fetchAll = $stmt->execute();
+        $fetchAll = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $fetchAll;
+    }
 }

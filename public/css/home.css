@@ -7,6 +7,7 @@ td {
 }
 
 table {
+    min-width: 60%;
     margin-top: 2rem;
     background-color: #3f51b5;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
@@ -16,7 +17,7 @@ form {
     width: 100%;
 }
 
-button {
+#logout {
     margin-top: 2rem;
     width: 100%;
     padding: 10px;
@@ -40,6 +41,26 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.search-bar {
+    margin-top: 2rem;
+    width: 100%;
+}
+
+.search-bar input {
+    padding: 2rem;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.search-bar button {
+    padding: 10px;
+    border: none;
+    color: #fff;
+    background-color: #3f51b5;
+    font-weight: bold;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
 td {

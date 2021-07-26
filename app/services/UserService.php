@@ -16,9 +16,7 @@ class UserService
     {
         try {
             $list = $this->userRepository->index();
-            $users = array_map(function ($e) {
-                return new User($e['id'], $e['email'], $e['username'], $e['fullname'], $e['password']);
-            }, $list);
+            $users = $this->mapToUsers($list);
             return $users;
         } catch (Exception $e) {
             echo `<div class="error-message">` . $e->getMessage() . `</div>`;
@@ -38,6 +36,18 @@ class UserService
             return false;
         }
     }
+    public function search(String $queryString)
+    {
+        try {
+            $list = $this->userRepository->search($queryString);
+            $users = $this->mapToUsers($list);
+            return $users;
+        } catch (Exception $e) {
+            echo `<div class="error-message">` . $e->getMessage() . `</div>`;
+            return false;
+        }
+    }
+
     public function logIn(String $email, String $password)
     {
         try {
@@ -54,5 +64,12 @@ class UserService
             echo `<div class="error-message">` . $e->getMessage() . `</div>`;
             return false;
         }
+    }
+
+    private function mapToUsers($array)
+    {
+        return array_map(function ($e) {
+            return new User($e['id'], $e['email'], $e['username'], $e['fullname'], $e['password']);
+        }, $array);
     }
 }

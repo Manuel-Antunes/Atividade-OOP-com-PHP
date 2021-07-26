@@ -8,7 +8,11 @@ $userService = new UserService(
         Connection::getConnection()
     )
 );
-$users = $userService->listUsers();
+if (isset($_GET["search"])) {
+    $users = $userService->search($_GET["search"]);
+} else {
+    $users = $userService->listUsers();
+}
 function logOut()
 {
     session_destroy();
@@ -32,6 +36,11 @@ function logOut()
     <div class="container">
         <section>
             <h1>Bem Vindo <?= $user['username'] ?></h1>
+            <form action="?view=home" method="GET">
+                <label for="search">Encontrar Usuários</label>
+                <input type="text" name="search">
+                <button type="submit">Pesquisar</button>
+            </form>
             <table>
                 <thead>
                     <th>Id</th>
@@ -49,7 +58,7 @@ function logOut()
                 <?php endforeach; ?>
             </table>
             <form action="?class=User&action=logout" method="post" required>
-                <button type="submit">Sair</button>
+                <button id="logout" type="submit">Sair</button>
             </form>
         </section>
     </div>
